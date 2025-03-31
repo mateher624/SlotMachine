@@ -1,0 +1,24 @@
+.slot-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  
+    button {
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      &:hover {
+        background-color: #ff9900;
+      }
+    }
+  }
+  
+  .reel-container {
+    display: flex;
+    gap: 10px;
+  }
+  
