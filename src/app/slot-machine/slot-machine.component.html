@@ -1,7 +1,13 @@
 <div class="slot-machine">
-    <app-reel [text]="reels[0]" [spinning]="spinning[0]"></app-reel>
-    <app-reel [text]="reels[1]" [spinning]="spinning[1]"></app-reel>
-    <app-reel [text]="reels[2]" [spinning]="spinning[2]"></app-reel>
-    <button (click)="play()">Play</button>
+    <div class="title">losowanie</div>
+    <div class="reel-container">
+      <app-reel class="reel" [text]="reels[0]" [spinning]="spinning[0]"></app-reel>
+      <app-reel class="reel" [text]="reels[1]" [spinning]="spinning[1]"></app-reel>
+      <app-reel class="reel" [text]="reels[2]" [spinning]="spinning[2]"></app-reel>
+    </div>
+    <span>
+        <button [disabled]="this.currentSetIndex < 0" (click)="back()">wróć</button>
+        <button (click)="play()">losuj</button>
+    </span>
   </div>
   

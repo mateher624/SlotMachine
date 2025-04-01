@@ -1,1 +1,6 @@
-<div class="reel">{{ spinning ? '...' : text }}</div>
+<div class="reel" [class.spinning]="spinning" [class.spinning-stop]="!spinning">
+    <div class="reel-content">
+      <div class="text dummy" *ngIf="spinning"><span *ngFor="let dummyText of dummyTexts">{{ dummyText }}</span></div>
+      <span class="text real" *ngIf="!spinning">{{ text }}</span>
+    </div>
+  </div>

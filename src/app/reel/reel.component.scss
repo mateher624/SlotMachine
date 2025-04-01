@@ -1,25 +1,52 @@
-$spin-duration: 1s;
-
 .reel {
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-  text-align: center;
-  border: 2px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: lightgray;
-  font-weight: bold;
-  animation: spin $spin-duration infinite linear;
+    flex: 1;
+    height: 100%;
 
-  @keyframes spin {
-    0% { opacity: 0.5; transform: rotateX(0deg); }
-    50% { opacity: 1; transform: rotateX(180deg); }
-    100% { opacity: 0.5; transform: rotateX(360deg); }
+    text-align: center;
+    display: flex;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    position: relative;
+  }
+  
+  .reel-content {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    .text {
+        font-size: 32px;
+        //font-weight: 500;
+        color: blue;
+        //font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        &.dummy {
+            text-align: left;
+            align-items: left;
+        }
+    }
+  }
+  
+  .reel.spinning .reel-content {
+    animation: shake 0.3s linear infinite;
   }
 
-  &.stopped {
-    animation: none;
+  .reel.spinning-stop .reel-content {
+    animation: spin-end 0.7s linear;
   }
-}
+  
+  @keyframes shake {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-150px); }
+    51% { transform: translateY(150px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes spin-end {
+    0% { transform: translateY(150px); }
+    100% { transform: translateY(0); }
+  }
