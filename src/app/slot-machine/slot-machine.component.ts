@@ -10,9 +10,9 @@ import { ReelComponent } from '../reel/reel.component';
 })
 export class SlotMachineComponent {
   sentenceSets = [
-    ["The sky is blue.", "Clouds drift by.", "Birds are flying."],
-    ["The sun is bright.", "Trees sway gently.", "Leaves fall down."],
-    ["Water is calm.", "Ripples spread out.", "Fish swim below."],
+    ["MS-1245", "Produkcja", "nie moża założyć konta"],
+    ["MS-666", "Installer", "nie działa"],
+    ["MS-3", "AWS 3", "najlepszy"],
     ["Mountains are tall.", "Rocks are steady.", "Snow tops peaks."],
     ["Night is silent.", "Stars shine bright.", "Moon glows softly."]
   ];
@@ -24,7 +24,6 @@ export class SlotMachineComponent {
 
   play() {
     this.currentSetIndex = (this.currentSetIndex + 1) % this.sentenceSets.length;
-    console.log(this.currentSetIndex);
 
     this.spinning = [true, true, true];
 
@@ -51,7 +50,6 @@ export class SlotMachineComponent {
     if (this.currentSetIndex < 0) {
       this.currentSetIndex += this.sentenceSets.length;
     }
-    console.log(this.currentSetIndex);
 
     this.timeoutRefs.forEach(t => clearTimeout(t));
 

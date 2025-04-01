@@ -16,23 +16,22 @@ export class ReelComponent implements OnInit, OnDestroy, OnChanges {
 
   private intervalId: any;
 
-  // Predefined word lists for sentence generation
-  private subjects = ['The cat', 'A dog', 'The bird', 'The sun', 'A tree', 'A child', 'A car', 'The moon', 'A cloud', 'The house', 'A man', 'A woman', 'The city', 'A bird', 'The ocean'];
+  private subjects = ['kot', 'pies', 'ptaszek', 'słońce', 'drzewo', 'dziecko', 'samochód', 'księżyc', 'chmura', 'dom', 'mężczyzna', 'kobieta', 'miasto', 'ptak', 'ocean'];
 
-  private verbs = ['runs', 'flies', 'sits', 'jumps', 'grows', 'swims', 'climbs', 'walks', 'sings', 'plays', 'dances', 'builds', 'screams', 'explores', 'drives'];
+  private verbs = ['biega', 'lata', 'siedzi', 'skacze', 'rośnie', 'pływa', 'wspina się', 'chodzi', 'śpiewa', 'gra', 'tańczy', 'buduje', 'krzyczy', 'bada', 'jeździ'];
   
-  private adjectives = ['quickly', 'happily', 'gracefully', 'silently', 'strongly', 'boldly', 'brightly', 'gently', 'angrily', 'carefully', 'joyfully', 'calmly', 'nervously', 'sharply', 'lazily'];
+  private adjectives = ['szybko', 'szczęśliwie', 'z gracją', 'cicho', 'mocno', 'śmiało', 'jasno', 'delikatnie', 'gniewnie', 'ostrożnie', 'radośnie', 'spokojnie', 'nerwowo', 'ostro', 'leniwe'];
   
-  private objects = ['on the grass', 'in the sky', 'in the park', 'under the tree', 'beside the river', 'on the street', 'by the sea', 'in the city', 'on the mountain', 'in the forest', 'beside the lake', 'by the fire', 'under the stars', 'on the roof', 'in the desert'];
+  private objects = ['na trawie', 'na niebie', 'w parku', 'pod drzewem', 'obok rzeki', 'na ulicy', 'przy morzu', 'w mieście', 'na górze', 'w lesie', 'obok jeziora', 'przy ognisku', 'pod gwiazdami', 'na dachu', 'na pustyni']
+  ;
 
-  // Generate a random sentence
   generateRandomString(): string {
     const subject = this.subjects[Math.floor(Math.random() * this.subjects.length)];
     const verb = this.verbs[Math.floor(Math.random() * this.verbs.length)];
     const adjective = this.adjectives[Math.floor(Math.random() * this.adjectives.length)];
     const object = this.objects[Math.floor(Math.random() * this.objects.length)];
 
-    return `${subject} ${verb} ${adjective} ${object}.`;
+    return `${subject} ${adjective} ${verb} ${object}`;
   }
 
   ngOnInit(): void {
@@ -61,7 +60,7 @@ export class ReelComponent implements OnInit, OnDestroy, OnChanges {
       for (let i = 0; i < 12; i++) {
         this.dummyTexts.push(this.generateRandomString())
       }
-    }, 200); // Update every 0.2 seconds
+    }, 200);
   }
 
   private stopSpinning(): void {
