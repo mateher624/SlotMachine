@@ -10,12 +10,12 @@ import { ReelComponent } from '../reel/reel.component';
 })
 export class SlotMachineComponent {
   sentenceSets = [
-    ["MS-1643", "app settingi w mmsie", "za bardzo cachowane"],
-    ["MS-1638", "nie działa", "ściąganie plików z DVRa"],
-    ["MS-1672", "installer", "będzie installował pupper agenta"],
-    ["MS-3", "AWS 3", "najlepszy"],
-    ["MS-1399", "produkcja", "ma problemy z rabbitem i zabbixem"],
-    ["MS-1644", "frontend", "logowania skacze i źle wygląda"],
+    ["MS-1643", "w mmsie app settingi", "cachowane"],
+    ["MS-1638", "nie działa", "ściąganie plików z kontrolera"],
+    ["MS-1672", "installer", "ma installować pupper agenta"],
+    ["MS-3", "aws 3", "najlepszy"],
+    ["MS-1399", "produkcja", "ma problem z rabbitem i zabbixem"],
+    ["MS-1644", "frontend", "skacze i źle wygląda na logowaniu"],
     ["MS-1505", "tickety", "nie pokazują się na Webie"],
     ["MS-1648", "installer", "wysyła logi tylko do prod mmsa"],
     ["MS-1655", "poproś produkcję", "żeby wreszcie zaczeli robić rzeczy na qa"],
