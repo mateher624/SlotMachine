@@ -10,7 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "npm run build-gh",
-    "deploy": "gh-pages -d dist/slot-machine"
+    "deploy": "gh-pages -d dist/slot-machine/browser"
   },
   "private": true,
   "dependencies": {
