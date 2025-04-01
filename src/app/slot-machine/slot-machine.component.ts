@@ -10,11 +10,16 @@ import { ReelComponent } from '../reel/reel.component';
 })
 export class SlotMachineComponent {
   sentenceSets = [
-    ["MS-1245", "Produkcja", "nie moża założyć konta"],
-    ["MS-666", "Installer", "nie działa"],
+    ["MS-1643", "app settingi w mmsie", "za bardzo cachowane"],
+    ["MS-1638", "nie działa", "ściąganie plików z DVRa"],
+    ["MS-1672", "installer", "będzie installował pupper agenta"],
     ["MS-3", "AWS 3", "najlepszy"],
-    ["Mountains are tall.", "Rocks are steady.", "Snow tops peaks."],
-    ["Night is silent.", "Stars shine bright.", "Moon glows softly."]
+    ["MS-1399", "produkcja", "ma problemy z rabbitem i zabbixem"],
+    ["MS-1644", "frontend", "logowania skacze i źle wygląda"],
+    ["MS-1505", "tickety", "nie pokazują się na Webie"],
+    ["MS-1648", "installer", "wysyła logi tylko do prod mmsa"],
+    ["MS-1655", "poproś produkcję", "żeby wreszcie zaczeli robić rzeczy na qa"],
+    ["MS-1642", "logowanie", "nie resetuje licznika zapomnianego hasła"],
   ];
 
   currentSetIndex = -1;
