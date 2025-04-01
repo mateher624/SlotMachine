@@ -6,10 +6,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-gh": "ng build --base-href https://mateher624.github.io/SlotMachine/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist/slot-machine/browser"
+    "predeploy": "npm run build-gh",
+    "deploy": "gh-pages -d dist/slot-machine"
   },
   "private": true,
   "dependencies": {
