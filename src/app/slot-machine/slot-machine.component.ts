@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ReelComponent } from '../reel/reel.component';
+import { SentenceEditorComponent } from '../sentence-editor/sentence-editor.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-slot-machine',
   standalone: true,
-  imports: [ReelComponent],
+  imports: [NgIf, ReelComponent, SentenceEditorComponent],
   templateUrl: './slot-machine.component.html',
   styleUrls: ['./slot-machine.component.scss']
 })
@@ -26,6 +28,7 @@ export class SlotMachineComponent {
   reels = ["", "", ""];
   spinning = [false, false, false];
   timeoutRefs: any[] = [];
+  showEditor: boolean = false;
 
   play() {
     this.currentSetIndex = (this.currentSetIndex + 1) % this.sentenceSets.length;
@@ -63,5 +66,14 @@ export class SlotMachineComponent {
     this.reels[2] = this.sentenceSets[this.currentSetIndex][2];
 
     this.spinning = [false, false, false];
+  }
+
+  edit() {
+    this.showEditor = !this.showEditor;
+  }
+
+  save(updatedSets: [string, string, string][]) {
+    this.sentenceSets = updatedSets;
+    this.showEditor = false;
   }
 }
